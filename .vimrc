@@ -1,3 +1,6 @@
+set enc=utf-8
+set list
+set listchars=trail:·,eol:¬
 set number
 set smartindent
 set tabstop=4
