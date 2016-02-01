@@ -8,3 +8,6 @@ set shiftwidth=4
 set expandtab
 set fileformat=unix
 colorscheme desert
+
+# o, O: preserve whitespaces
+inoremap <Return> <Space><BS><Return>
