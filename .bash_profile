@@ -18,6 +18,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
+alias iocmd='node ~/iocmd/bin/iocmd.js'
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`'
 
 NPM_PACKAGES="${HOME}/.npm-packages"
