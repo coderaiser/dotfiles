@@ -23,4 +23,5 @@ alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`'
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
+PATH="$HOME/.bin:$PATH"
 
