@@ -27,3 +27,6 @@ PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 
 lso() { ls -l "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}'; }
+
+which docker-machine && eval "$(docker-machine env default)" 2> /dev/null
+
