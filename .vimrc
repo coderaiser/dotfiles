@@ -12,3 +12,8 @@ syntax on
 
 " o, O: preserve whitespaces
 inoremap <Return> <Space><BS><Return>
+
+if filereadable(glob("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
+
