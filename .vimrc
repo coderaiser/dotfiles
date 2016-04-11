@@ -17,3 +17,7 @@ if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
 
+if expand('%:t') == "package.json"
+    set tabstop=2
+    set shiftwidth=2
+endif
