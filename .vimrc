@@ -17,12 +17,12 @@ if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
 
-if expand('%:t') == "package.json"
+if expand('%:t') =~ '^package\.json$\|^\.\(babel\)'
     set tabstop=2
     set shiftwidth=2
 endif
 
-if expand('%:t') =~ '^\.\(jshint\|jscs\|eslint\)'
+if expand('%:t') =~ '^\.\(jshint\|jscs\|eslint\|babel\)'
     set syntax=javascript
 endif
 
