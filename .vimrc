@@ -21,3 +21,8 @@ if expand('%:t') == "package.json"
     set tabstop=2
     set shiftwidth=2
 endif
+
+if expand('%:t') =~ '^\.\(jshint\|jscs\|eslint\)'
+    set syntax=javascript
+endif
+
