@@ -17,7 +17,7 @@ if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
 
-if expand('%:t') =~ '^package\.json$\|^\.\(babel\)'
+if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
     set tabstop=2
     set shiftwidth=2
 endif
