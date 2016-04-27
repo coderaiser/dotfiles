@@ -1,6 +1,6 @@
 source ~/git-prompt.sh
 source ~/.nvm/nvm.sh
-nvm i 5
+nvm i 6
 #PROMPT_COMMAND='echo -ne "\033]0;${C9_USER}@${C9_PROJECT}: ${PWD/#$HOME/~}\007"'
 #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]${PWD/#$HOME/~}\[\033[00m\]$(__git_ps1 " (%s)") $ '                                                                       
 PS1='\u@\h:\w$ '
