@@ -31,7 +31,7 @@ lso() { ls -l "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2
 function amend-date() {
     if [ $# -eq 0 ]; then
         echo "amend-date [hours]";
-    elif ! [[ $1 =~ ^[-0-9]+$ ]]; then
+    elif ! [[ $1 =~ ^[-+0-9]+$ ]]; then
         echo "date should be number";
     else
         git commit --amend --no-edit --date="$(date --date="$1 hours")";
@@ -39,3 +39,4 @@ function amend-date() {
 }
 
 alias git-log='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:%H:%M:%d.%m.%y'
+
