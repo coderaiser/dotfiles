@@ -39,4 +39,5 @@ function amend-date() {
 }
 
 alias git-log='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:%H:%M:%d.%m.%y'
+alias jekyll-build='docker run -it -v /home/coderaiser/cloudcmd-io:/srv/jekyll -p 4000:4000 jekyll/jekyll'
 
