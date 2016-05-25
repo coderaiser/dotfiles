@@ -40,4 +40,6 @@ function amend-date() {
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:%H:%M:%d.%m.%y'
 alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll'
+alias longrun="~/longrun/bin/longrun.js"
+
 
