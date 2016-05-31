@@ -42,4 +42,8 @@ alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date
 alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll'
 alias longrun="~/longrun/bin/longrun.js"
 
+alias letsencrypt='sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
+        -v "/etc/letsencrypt:/etc/letsencrypt" \
+        -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+        quay.io/letsencrypt/letsencrypt:latest auth'
 
