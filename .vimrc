@@ -18,7 +18,7 @@ if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
     set shiftwidth=2
 endif
 
-if expand('%:t') =~ '^\.\(jshint\|jscs\|eslint\|babel\)'
+if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\)'
     set syntax=javascript
 endif
 
