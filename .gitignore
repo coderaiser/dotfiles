@@ -3,3 +3,6 @@
 !.bash_profile
 !git-prompt.sh
 
+# cyrillic output in console
+!.inputrc
+
