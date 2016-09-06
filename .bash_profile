@@ -1,6 +1,9 @@
 source ~/.nvm/nvm.sh
 nvm i 6
 
+export EDITOR="vim"
+export VISUAL="$EDITOR"
+
 PS1='\u@\h:\w$ '
 if [ "$(uname)" == "Darwin" ]; then
     alias ls='ls -G'
