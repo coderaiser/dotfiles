@@ -42,11 +42,15 @@ function amend-date() {
 }
 
 function nvm-patch() {
-    sed -i 's/nvm_die_on_prefix() {/nvm_die_on_prefix() { return;/' .nvm/nvm.sh
+    # mac os needs extension
+    sed -i.bak 's/nvm_die_on_prefix() {/nvm_die_on_prefix() { return;/' ~/.nvm/nvm.sh;
+    rm ~/.nvm/nvm.sh.bak;
 }
 
 function nvm-revert() {
-    sed -i 's/nvm_die_on_prefix() { return;/nvm_die_on_prefix() {/' .nvm/nvm.sh
+    # mac os needs extension
+    sed -i.bak 's/nvm_die_on_prefix() { return;/nvm_die_on_prefix() {/' ~/.nvm/nvm.sh
+    rm ~/.nvm/nvm.sh.bak;
 }
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
