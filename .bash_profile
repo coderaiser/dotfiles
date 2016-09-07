@@ -41,6 +41,14 @@ function amend-date() {
     fi
 }
 
+function nvm-patch() {
+    sed -i 's/nvm_die_on_prefix() {/nvm_die_on_prefix() { return;/' .nvm/nvm.sh
+}
+
+function nvm-revert() {
+    sed -i 's/nvm_die_on_prefix() { return;/nvm_die_on_prefix() {/' .nvm/nvm.sh
+}
+
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
 alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll'
 alias longrun="~/longrun/bin/longrun.js"
