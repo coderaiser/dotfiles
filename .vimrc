@@ -22,6 +22,10 @@ if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\)'
     set syntax=javascript
 endif
 
+if expand('%:t') =~ '.service$'
+    set syntax=dosini
+endif
+
 if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
