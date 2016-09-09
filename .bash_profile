@@ -66,5 +66,5 @@ alias letsencrypt='sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
         -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
         quay.io/letsencrypt/letsencrypt:latest auth'
 
-include .bash_profile.local
+include ~/.bash_profile.local
 
