@@ -31,7 +31,7 @@ PATH="$PATH:node_modules/.bin"
 
 lso() { ls -l "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}'; }
 
-function amend-date() {
+amend-date() {
     if [ $# -eq 0 ]; then
         echo "amend-date [hours]";
     elif ! [[ $1 =~ ^[-+0-9]+$ ]]; then
@@ -41,16 +41,20 @@ function amend-date() {
     fi
 }
 
-function nvm-patch() {
+nvm-patch() {
     # mac os needs extension
     sed -i.bak 's/nvm_die_on_prefix() {/nvm_die_on_prefix() { return;/' ~/.nvm/nvm.sh;
     rm ~/.nvm/nvm.sh.bak;
 }
 
-function nvm-revert() {
+nvm-revert() {
     # mac os needs extension
     sed -i.bak 's/nvm_die_on_prefix() { return;/nvm_die_on_prefix() {/' ~/.nvm/nvm.sh
     rm ~/.nvm/nvm.sh.bak;
+}
+
+include () {
+    [[ -f "$1" ]] && source "$1"
 }
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
@@ -61,4 +65,6 @@ alias letsencrypt='sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
         -v "/etc/letsencrypt:/etc/letsencrypt" \
         -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
         quay.io/letsencrypt/letsencrypt:latest auth'
+
+include .bash_profile.local
 
