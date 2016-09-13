@@ -13,6 +13,9 @@ syntax on
 " o, O: preserve whitespaces
 inoremap <Return> <Space><BS><Return>
 
+" replace last character with ";"
+let @e = 'Ar;j^'
+
 if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
     set tabstop=2
     set shiftwidth=2
