@@ -31,6 +31,14 @@ PATH="$PATH:node_modules/.bin"
 
 lso() { ls -l "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}'; }
 
+docker-rmi() {
+    if [ $# -eq 0 ]; then
+        echo "docker-rm [image name]";
+    else
+        docker rmi -f $(docker images | grep -E "$1" | awk '{print $3}')
+    fi
+}
+
 amend-date() {
     if [ $# -eq 0 ]; then
         echo "amend-date [hours]";
