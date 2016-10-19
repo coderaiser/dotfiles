@@ -21,7 +21,6 @@ alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
 alias iocmd='node ~/iocmd/bin/iocmd.js'
 
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`'
-alias docker-rm-untagged='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
@@ -38,6 +37,11 @@ docker-rmi() {
         docker rmi -f $(docker images | grep -E "$1" | awk '{print $3}')
     fi
 }
+
+docker-rm-untagged() {
+    docker rmi $(docker images | grep none);
+}
+
 
 amend-date() {
     if [ $# -eq 0 ]; then
