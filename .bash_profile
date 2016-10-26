@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i 6
+nvm i node
 
 export EDITOR="vim"
 export VISUAL="$EDITOR"
