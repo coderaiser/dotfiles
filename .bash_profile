@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i node
+nvm i 7
 
 export EDITOR="vim"
 export VISUAL="$EDITOR"
@@ -57,12 +57,14 @@ nvm-patch() {
     # mac os needs extension
     sed -i.bak 's/nvm_die_on_prefix() {/nvm_die_on_prefix() { return;/' ~/.nvm/nvm.sh;
     rm ~/.nvm/nvm.sh.bak;
+    source ~/.nvm/nvm.sh
 }
 
 nvm-revert() {
     # mac os needs extension
     sed -i.bak 's/nvm_die_on_prefix() { return;/nvm_die_on_prefix() {/' ~/.nvm/nvm.sh
     rm ~/.nvm/nvm.sh.bak;
+    source ~/.nvm/nvm.sh
 }
 
 include () {
