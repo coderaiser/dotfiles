@@ -16,6 +16,11 @@ inoremap <Return> <Space><BS><Return>
 " replace last character with ";"
 let @e = 'Ar;j^'
 
+" replace a lot spaces with one in var
+let @r = 'j^eeldwi '
+
+" -> "ap to paste macros from buffer
+
 if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
     set tabstop=2
     set shiftwidth=2
