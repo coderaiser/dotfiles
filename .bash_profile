@@ -12,10 +12,13 @@ elif [ "$(uname)" == "Linux" ]; then
     alias ls='ls --color'
 fi
 
+export HISTCONTROL=ignorespace
+
 alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias yarni='yarn install --no-lockfile'
 
 alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
 alias iocmd='node ~/iocmd/bin/iocmd.js'
