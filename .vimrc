@@ -14,12 +14,16 @@ syntax on
 inoremap <Return> <Space><BS><Return>
 
 " replace last character with ";"
-let @e = 'Ar;j^'
+let @e = 'Ar;'
 
 " replace a lot spaces with one in var
-let @r = 'j^eeldwi '
+let @r = '^eeldwi '
+
+" replace : es5 -> es6 => 
+let @f ='/function(dw$i=> '
 
 " -> "ap to paste macros from buffer
+" <Ctr-v><Esc> - to put ^[
 
 if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
     set tabstop=2
