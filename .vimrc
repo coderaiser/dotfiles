@@ -7,6 +7,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set fileformats=unix
+
 colorscheme desert
 syntax on
 
@@ -18,6 +19,9 @@ let @e = 'Ar;'
 
 " replace a lot spaces with one in var
 let @r = '^eeldwi '
+
+" @e + @r
+let @g = '@r@ej^'
 
 " replace : es5 -> es6 => 
 let @f ='/function(dw$i=> '
