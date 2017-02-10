@@ -7,6 +7,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set fileformats=unix
+set backupcopy=yes
 
 colorscheme desert
 syntax on
