@@ -30,6 +30,9 @@ let @f = '/function(dw$i=> '
 " replace spaces: "     " -> " "
 let @s = '/  dwi j^'
 
+" replace var with const
+let @c = 'dwiconst j^'
+
 " -> "ap to paste macros from buffer
 " <Ctr-v><Esc> - to put ^[
 
