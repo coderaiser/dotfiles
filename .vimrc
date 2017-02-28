@@ -24,8 +24,11 @@ let @r = '^eeldwi '
 " @e + @r
 let @g = '@r@ej^'
 
-" replace : es5 -> es6 => 
-let @f ='/function(dw$i=> '
+" replace : es5 -> es6 =>
+let @f = '/function(dw$i=> '
+
+" replace spaces: "     " -> " "
+let @s = '/  dwi j^'
 
 " -> "ap to paste macros from buffer
 " <Ctr-v><Esc> - to put ^[
