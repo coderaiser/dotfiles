@@ -21,6 +21,7 @@ alias egrep='egrep --color=auto'
 alias yarni='yarn install --no-lockfile'
 
 alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
+alias dcloudcmd='NODE_ENV=development cloudcmd'
 alias iocmd='node ~/iocmd/bin/iocmd.js'
 
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`'
