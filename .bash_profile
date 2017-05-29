@@ -14,6 +14,9 @@ fi
 
 export HISTCONTROL=ignorespace
 
+alias install-yandex='sudo apt install davfs2';
+alias mount-yandex='mkdir -p ~/yandex-disk; sudo mount -t davfs https://webdav.yandex.ru ~/yandex-disk/'
+
 alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -46,7 +49,6 @@ docker-rm-untagged() {
     docker rmi $(docker images | grep none);
 }
 
-
 amend-date() {
     if [ $# -eq 0 ]; then
         echo "amend-date [hours]";
@@ -76,7 +78,7 @@ include () {
 }
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
-alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll'
+alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve'
 alias longrun="~/longrun/bin/longrun.js"
 
 alias letsencrypt='sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
