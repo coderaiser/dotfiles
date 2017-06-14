@@ -21,13 +21,17 @@ alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias yarni='yarn install --no-lockfile'
+alias yarni='yarn i --no-lockfile'
+alias yarnadd='yarn add --no-lockfile'
+alias clean-journal='sudo journalctl --vacuum-size=100M';
 
 alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
 alias dcloudcmd='NODE_ENV=development cloudcmd'
 alias iocmd='node ~/iocmd/bin/iocmd.js'
 
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`'
+
+alias ignore-package-lock="ex -sc '1i|package-lock.json' -cx .gitignore";
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
@@ -84,7 +88,7 @@ alias longrun="~/longrun/bin/longrun.js"
 alias letsencrypt='sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
         -v "/etc/letsencrypt:/etc/letsencrypt" \
         -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
-        quay.io/letsencrypt/letsencrypt:latest auth'
+        certbot/certbot auth'
 
 include ~/.bash_profile.local
 
