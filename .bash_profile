@@ -21,7 +21,7 @@ alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias yarni='yarn i --no-lockfile'
+alias yarni='yarn --no-lockfile'
 alias yarnadd='yarn add --no-lockfile'
 alias clean-journal='sudo journalctl --vacuum-size=100M';
 
@@ -29,9 +29,13 @@ alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
 alias dcloudcmd='NODE_ENV=development cloudcmd'
 alias iocmd='node ~/iocmd/bin/iocmd.js'
 
-alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`'
+alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`';
 
-alias ignore-package-lock="ex -sc '1i|package-lock.json' -cx .gitignore";
+ignore-package-lock() {
+    ex -sc '1i|package-lock.json' -cx .gitignore;
+    git add .gitignore;
+    git commit -m 'feature(gitignore) add package-lock.json';
+}
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
