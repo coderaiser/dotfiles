@@ -1,5 +1,6 @@
 source ~/.nvm/nvm.sh
-nvm i node
+nvm i 8
+npm set package-lock false
 export PATH="$HOME/.yarn/bin:$PATH"
 
 export EDITOR="vim"
@@ -25,6 +26,7 @@ alias egrep='egrep --color=auto'
 alias yarni='yarn --no-lockfile'
 alias yarnadd='yarn add --no-lockfile'
 alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
+alias yarn-clean="rm -rf .cache/yarn/*"
 alias clean-journal='sudo journalctl --vacuum-size=100M';
 
 alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
