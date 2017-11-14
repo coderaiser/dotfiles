@@ -1,3 +1,5 @@
+autocmd BufReadPost * call SetFileTypeOptions()
+
 set enc=utf-8
 set list
 set listchars=trail:·,eol:¬
@@ -36,20 +38,22 @@ let @c = 'dwiconst j^'
 " -> "ap to paste macros from buffer
 " <Ctr-v><Esc> - to put ^[
 
-if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
-    set tabstop=2
-    set shiftwidth=2
-endif
+function SetFileTypeOptions()
+    if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
+        set tabstop=2
+        set shiftwidth=2
+    endif
 
-if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\)'
-    set syntax=javascript
-endif
+    if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\)'
+        set syntax=javascript
+    endif
 
-if expand('%:t') =~ '.service$'
-    set syntax=dosini
-endif
+    if expand('%:t') =~ '.service$'
+        set syntax=dosini
+    endif
 
-if filereadable(glob("~/.vimrc.local"))
-    source ~/.vimrc.local
-endif
+    if filereadable(glob("~/.vimrc.local"))
+        source ~/.vimrc.local
+    endif
+endfunction
 
