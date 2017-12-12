@@ -23,7 +23,7 @@ alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias yarni='yarn --no-lockfile'
+alias yarni='yarn --no-lockfile --link-duplicates'
 alias yarnadd='yarn add --no-lockfile'
 alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
 alias yarn-clean="rm -rf .cache/yarn/*"
