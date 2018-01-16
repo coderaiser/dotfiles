@@ -89,14 +89,19 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
+letsencrypt () {
+    sudo service nginx stop;
+    sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
+        -v "/etc/letsencrypt:/etc/letsencrypt" \
+        -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+        certbot/certbot auth
+    sudo service nginx start;
+    docker rmi certbot/certbot;
+}
+
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
 alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve'
 alias longrun="~/longrun/bin/longrun.js"
-
-alias letsencrypt='sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
-        -v "/etc/letsencrypt:/etc/letsencrypt" \
-        -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
-        certbot/certbot auth'
 
 include ~/.bash_profile.local
 
