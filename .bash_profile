@@ -34,6 +34,8 @@ alias iocmd='node ~/iocmd/bin/iocmd.js'
 
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`';
 
+alias node-inspect='node --inspect-brk --inspect=0.0.0.0';
+
 function mountram() {
     sudo mount -t tmpfs -o size=400M tmpfs /media/ramdisk
 }
