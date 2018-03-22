@@ -1,7 +1,6 @@
 source ~/.nvm/nvm.sh
 nvm i 8
 npm set package-lock false
-export PATH="$HOME/.yarn/bin:$PATH"
 
 export EDITOR="vim"
 export VISUAL="$EDITOR"
@@ -24,7 +23,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias yarni='yarn --no-lockfile --link-duplicates'
-alias yarnadd='yarn add --no-lockfile'
+alias yarnadd='yarn add --no-lockfile --link-duplicates'
 alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
 alias yarn-clean="rm -rf .cache/yarn/*"
 alias clean-journal='sudo journalctl --vacuum-size=100M';
@@ -34,6 +33,21 @@ alias dcloudcmd='NODE_ENV=development cloudcmd'
 alias iocmd='node ~/iocmd/bin/iocmd.js'
 
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`';
+
+function mountram() {
+    sudo mount -t tmpfs -o size=400M tmpfs /media/ramdisk
+}
+
+function hi() {
+    tar zxf node_modules.tar.gz -P -C /media/ramdisk \
+    && ln -s /media/ramdisk/node_modules \
+    && rm node_modules.tar.gz
+}
+
+function bye() {
+    tar zcf node_modules.tar.gz node_modules -h \
+    && rm -rf node_modules
+}
 
 ignore-package-lock() {
     ex -sc '1i|package-lock.json' -cx .gitignore;
