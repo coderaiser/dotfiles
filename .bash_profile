@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i 8
+nvm i 10
 npm set package-lock false
 
 export EDITOR="vim"
@@ -25,7 +25,7 @@ alias egrep='egrep --color=auto'
 alias yarni='yarn --no-lockfile --link-duplicates'
 alias yarnadd='yarn add --no-lockfile --link-duplicates'
 alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
-alias yarn-clean="rm -rf .cache/yarn/*"
+alias yarn-clean="rm -rf ~/.cache/yarn/*"
 alias clean-journal='sudo journalctl --vacuum-size=100M';
 
 alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
@@ -35,6 +35,7 @@ alias iocmd='node ~/iocmd/bin/iocmd.js'
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`';
 
 alias node-inspect='node --inspect-brk --inspect=0.0.0.0';
+alias node='node --experimental-repl-await';
 
 function mountram() {
     sudo mount -t tmpfs -o size=400M tmpfs /media/ramdisk
