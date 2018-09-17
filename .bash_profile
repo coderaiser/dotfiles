@@ -35,7 +35,7 @@ alias iocmd='node ~/iocmd/bin/iocmd.js'
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`';
 
 alias node-inspect='node --inspect-brk --inspect=0.0.0.0';
-alias node='node --experimental-repl-await';
+alias node='node --experimental-repl-await --throw-deprecation';
 
 function mountram() {
     sudo mount -t tmpfs -o size=400M tmpfs /media/ramdisk
@@ -111,10 +111,12 @@ letsencrypt () {
     sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
         -v "/etc/letsencrypt:/etc/letsencrypt" \
         -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
-        certbot/certbot auth
+        certbot/certbot;
     sudo service nginx start;
     docker rmi certbot/certbot;
 }
+
+alias letsencrypt-auto=certbot-auto renew
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
 alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve'
