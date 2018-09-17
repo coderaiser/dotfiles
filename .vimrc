@@ -1,5 +1,7 @@
 autocmd BufReadPost * call SetFileTypeOptions()
 
+" vim hex view :%!xxd
+
 set enc=utf-8
 set list
 set listchars=trail:·,eol:¬
@@ -39,7 +41,7 @@ let @c = 'dwiconst j^'
 " <Ctr-v><Esc> - to put ^[
 
 function SetFileTypeOptions()
-    if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)'
+    if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)\|\(^\.gitlab-ci\)'
         set tabstop=2
         set shiftwidth=2
     endif
