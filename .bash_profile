@@ -116,7 +116,7 @@ letsencrypt () {
     docker rmi certbot/certbot;
 }
 
-alias letsencrypt-auto=certbot-auto renew
+alias letsencrypt-auto="certbot-auto renew"
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
 alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve'
