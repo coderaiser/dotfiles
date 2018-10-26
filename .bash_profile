@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i 10
+nvm i 11
 npm set package-lock false
 
 export EDITOR="vim"
@@ -114,6 +114,12 @@ letsencrypt () {
         certbot/certbot;
     sudo service nginx start;
     docker rmi certbot/certbot;
+}
+
+babel-up () {
+    babel-upgrade --write
+    git add .
+    git commit -am 'feature(package) babel v7.0.0'
 }
 
 alias letsencrypt-auto="certbot-auto renew"
