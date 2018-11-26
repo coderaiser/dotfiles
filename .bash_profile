@@ -6,10 +6,7 @@ export EDITOR="vim"
 export VISUAL="$EDITOR"
 
 PS1='\u@\h:\w$ '
-if [ "$(uname)" == "Darwin" ]; then
-    alias ls='ls -G'
-    which docker-machine > /dev/null && eval "$(docker-machine env default)" 2> /dev/null
-elif [ "$(uname)" == "Linux" ]; then
+if [ "$(uname)" == "Linux" ]; then
     alias ls='ls --color'
 fi
 
