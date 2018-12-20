@@ -2,6 +2,8 @@ source ~/.nvm/nvm.sh
 nvm i 11
 npm set package-lock false
 
+git config --global core.whitespace -trailing-space
+
 export EDITOR="vim"
 export VISUAL="$EDITOR"
 
@@ -103,6 +105,14 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
+
+#alias letsencrypt-auto="certbot-auto renew"
+letsencryptauto () {
+    sudo service nginx stop;
+    certbot-auto renew;
+    sudo service nginx start;
+}
+
 letsencrypt () {
     sudo service nginx stop;
     sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
@@ -119,11 +129,10 @@ babel-up () {
     git commit -am 'feature(package) babel v7.0.0'
 }
 
-alias letsencrypt-auto="certbot-auto renew"
-
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
 alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jekyll jekyll serve'
 alias longrun="~/longrun/bin/longrun.js"
 
 include ~/.bash_profile.local
 
+PATH="$PATH:.vimpkg/bin"
