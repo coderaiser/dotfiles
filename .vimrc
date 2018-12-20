@@ -37,6 +37,9 @@ let @s = '/  dwi j^'
 " replace var with const
 let @c = 'dwiconst j^'
 
+" change sinon to stub
+let @j = 'jbbdbdb'
+
 " -> "ap to paste macros from buffer
 " <Ctr-v><Esc> - to put ^[
 
@@ -59,3 +62,5 @@ function SetFileTypeOptions()
     endif
 endfunction
 
+execute pathogen#infect()
+call pathogen#helptags()
