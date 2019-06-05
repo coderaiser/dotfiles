@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i 11
+nvm i 12
 npm set package-lock false
 
 git config --global core.whitespace -trailing-space
@@ -118,7 +118,7 @@ letsencrypt () {
     sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
         -v "/etc/letsencrypt:/etc/letsencrypt" \
         -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
-        certbot/certbot;
+        certbot/certbot renew;
     sudo service nginx start;
     docker rmi certbot/certbot;
 }
@@ -135,4 +135,3 @@ alias longrun="~/longrun/bin/longrun.js"
 
 include ~/.bash_profile.local
 
-PATH="$PATH:.vimpkg/bin"
