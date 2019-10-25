@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i 12
+nvm i 13
 npm set package-lock false
 
 git config --global core.whitespace -trailing-space
@@ -127,6 +127,17 @@ babel-up () {
     babel-upgrade --write
     git add .
     git commit -am 'feature(package) babel v7.0.0'
+}
+
+madrun-install() {
+    yarnadd eslint-plugin-node eslint-plugin-putout putout madrun supertape -D;
+}
+
+madrun-init () {
+    madrun --init;
+    putout --fix madrun.js;
+    madrun --init;
+    cp ~/readify/.eslintrc.json ./
 }
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'

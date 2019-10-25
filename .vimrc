@@ -49,7 +49,7 @@ function SetFileTypeOptions()
         set shiftwidth=2
     endif
 
-    if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\)'
+    if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\|lintstagedrc\)'
         set syntax=javascript
     endif
 
