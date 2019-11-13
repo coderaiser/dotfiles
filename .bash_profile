@@ -145,5 +145,4 @@ alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jeky
 alias longrun="~/longrun/bin/longrun.js"
 
 include ~/.bash_profile.local
-include ~/.bashrc
 
