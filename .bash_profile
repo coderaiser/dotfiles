@@ -7,7 +7,7 @@ git config --global core.whitespace -trailing-space
 export EDITOR="vim"
 export VISUAL="$EDITOR"
 
-PS1='\u@\h:\w$ '
+#PS1='\u@\h:\w$ '
 if [ "$(uname)" == "Linux" ]; then
     alias ls='ls --color'
 fi
@@ -145,4 +145,5 @@ alias jekyll-build='docker run -it -v `pwd`:/srv/jekyll -p 4000:4000 jekyll/jeky
 alias longrun="~/longrun/bin/longrun.js"
 
 include ~/.bash_profile.local
+include ~/.bashrc
 
