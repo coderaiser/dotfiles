@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i 13
+nvm i 14
 npm set package-lock false
 
 git config --global core.whitespace -trailing-space
@@ -12,6 +12,8 @@ if [ "$(uname)" == "Linux" ]; then
     alias ls='ls --color'
 fi
 
+export NODE_OPTIONS="$NODE_OPTIONS --unhandled-rejections=strict"
+
 export HISTCONTROL=ignorespace
 
 alias install-yandex='sudo apt install davfs2';
@@ -21,8 +23,8 @@ alias ls='ls -GF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias yarni='yarn --no-lockfile --link-duplicates'
-alias yarnadd='yarn add --no-lockfile --link-duplicates'
+alias yarni='yarn --no-lockfile --link-duplicates --registry https://registry.npmjs.org'
+alias yarnadd='yarn add --no-lockfile --link-duplicates --registry https://registry.npmjs.org'
 alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
 alias yarn-clean="rm -rf ~/.cache/yarn/*"
 alias clean-journal='sudo journalctl --vacuum-size=100M';
