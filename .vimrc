@@ -44,16 +44,16 @@ let @j = 'jbbdbdb'
 " <Ctr-v><Esc> - to put ^[
 
 function SetFileTypeOptions()
-    if expand('%:t') =~ '\(^package\.json$\)\|\(^\.babel\)\|\(^\.gitlab-ci\)'
+    if expand('%:t') =~ '\(^package\.json$\)\|\(^\.gitlab-ci\)'
         set tabstop=2
         set shiftwidth=2
     endif
 
-    if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\|lintstagedrc\)'
+    if expand('%:t') =~ '^\.\?\(jshint\|jscs\|eslint\|babel\|lintstagedrc\|remarkrc\)'
         set syntax=javascript
     endif
     
-     if expand('%:t') =~ '\(^docker-compose\.yml$\)'
+     if expand('%:t') =~ '\.ya\?ml$'
         set tabstop=2
         set shiftwidth=2
     endif
