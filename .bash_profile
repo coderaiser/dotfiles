@@ -30,7 +30,7 @@ alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
 alias yarn-clean="rm -rf ~/.cache/yarn/*"
 alias clean-journal='sudo journalctl --vacuum-size=100M';
 
-alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.js'
+alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.mjs'
 alias dcloudcmd='NODE_ENV=development cloudcmd'
 alias iocmd='node ~/iocmd/bin/iocmd.js'
 
