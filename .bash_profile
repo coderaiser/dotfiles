@@ -1,5 +1,5 @@
 source ~/.nvm/nvm.sh
-nvm i 15
+nvm i 16
 npm set package-lock false
 
 git config --global core.whitespace -trailing-space
