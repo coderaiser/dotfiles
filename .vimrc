@@ -12,6 +12,8 @@ set shiftwidth=4
 set expandtab
 set fileformats=unix
 set backupcopy=yes
+set splitbelow
+set backspace=indent,eol,start
 
 colorscheme desert
 syntax on
@@ -67,9 +69,3 @@ function SetFileTypeOptions()
     endif
 endfunction
 
-execute pathogen#infect()
-call pathogen#helptags()
-
-map <C-n> :NERDTreeToggle<CR>
-
-set splitbelow
