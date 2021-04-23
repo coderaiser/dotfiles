@@ -7,6 +7,11 @@ git config --global core.whitespace -trailing-space
 export EDITOR="vim"
 export VISUAL="$EDITOR"
 
+# vim modes
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
+
 #PS1='\u@\h:\w$ '
 PS1='\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 if [ "$(uname)" == "Linux" ]; then
@@ -29,6 +34,7 @@ alias yarnadd='yarn add --no-lockfile --link-duplicates --registry https://regis
 alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
 alias yarn-clean="rm -rf ~/.cache/yarn/*"
 alias clean-journal='sudo journalctl --vacuum-size=100M';
+alias update-madrun='mv .madrun.js .madrun.mjs && putout .madrun.mjs --fix';
 
 alias cloudcmd='node ~/cloudcmd/bin/cloudcmd.mjs'
 alias dcloudcmd='NODE_ENV=development cloudcmd'
@@ -36,7 +42,7 @@ alias iocmd='node ~/iocmd/bin/iocmd.js'
 
 alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`';
 
-alias node-inspect='node --inspect-brk --inspect=0.0.0.0';
+alias node-inspect='node --inspect-brk=0.0.0.0:9111';
 alias node='node --experimental-repl-await --throw-deprecation';
 
 function mountram() {
@@ -64,6 +70,7 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.deno/bin:$PATH"
 PATH="$PATH:node_modules/.bin"
 
 lso() { ls -l "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}'; }
