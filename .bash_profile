@@ -1,5 +1,10 @@
-source ~/.nvm/nvm.sh
-nvm i 16
+# use snap on linux
+# sudo snap install node --classic --channel=14
+# sudo snap refresh node --channel=18
+if [ "$(uname)" != "Linux" ]; then
+    source ~/.nvm/nvm.sh
+    nvm i 18
+fi
 npm set package-lock false
 
 git config --global core.whitespace -trailing-space
