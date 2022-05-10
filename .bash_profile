@@ -23,7 +23,7 @@ if [ "$(uname)" == "Linux" ]; then
     alias ls='ls --color'
 fi
 
-export NODE_OPTIONS="$NODE_OPTIONS --unhandled-rejections=strict"
+export NODE_OPTIONS="--unhandled-rejections=strict"
 
 export HISTCONTROL=ignorespace
 
@@ -49,6 +49,8 @@ alias docker-rm-c='docker rm `docker stop $(docker ps -aq)`';
 
 alias node-inspect='node --inspect-brk=0.0.0.0:9111';
 alias node='node --experimental-repl-await --throw-deprecation';
+
+alias again='redrun fix:lint && git add .'
 
 function mountram() {
     sudo mount -t tmpfs -o size=400M tmpfs /media/ramdisk
