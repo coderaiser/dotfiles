@@ -1,10 +1,8 @@
 # use snap on linux
 # sudo snap install node --classic --channel=14
 # sudo snap refresh node --channel=18
-if [ "$(uname)" != "Linux" ]; then
-    source ~/.nvm/nvm.sh
-    nvm i 18
-fi
+source ~/.nvm/nvm.sh
+nvm i 18
 npm set package-lock false
 
 git config --global core.whitespace -trailing-space
@@ -155,6 +153,10 @@ madrun-init () {
     putout --fix madrun.js;
     madrun --init;
     cp ~/readify/.eslintrc.json ./
+}
+
+update-cert() {
+    sudo certbot --nginx -d admin.cloudcmd.io
 }
 
 alias gitlog='git log --pretty=format:"%C(Yellow)%h %Cgreen%ad %Creset%s" --date=format:"%H:%M:%S %d.%m.%y"'
