@@ -1,8 +1,14 @@
 # use snap on linux
 # sudo snap install node --classic --channel=14
 # sudo snap refresh node --channel=18
-source ~/.nvm/nvm.sh
-nvm i 18
+
+nvm i 20
+
+if [ "$(uname)" != "Linux" ]; then
+    source ~/.nvm/nvm.sh
+    nvm i 20
+fi
+
 npm set package-lock false
 
 git config --global core.whitespace -trailing-space
@@ -120,7 +126,6 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
-
 #alias letsencrypt-auto="certbot-auto renew"
 letsencryptauto () {
     sudo service nginx stop;
@@ -165,3 +170,4 @@ alias longrun="~/longrun/bin/longrun.js"
 
 include ~/.bash_profile.local
 
+. "$HOME/.cargo/env"
