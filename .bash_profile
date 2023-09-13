@@ -2,8 +2,6 @@
 # sudo snap install node --classic --channel=14
 # sudo snap refresh node --channel=18
 
-nvm i 20
-
 if [ "$(uname)" != "Linux" ]; then
     source ~/.nvm/nvm.sh
     nvm i 20
@@ -39,6 +37,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias yarni='yarn --no-lockfile --link-duplicates --registry https://registry.npmjs.org'
+alias buni='bun i --no-save'
 alias yarnadd='yarn add --no-lockfile --link-duplicates --registry https://registry.npmjs.org'
 alias yarn-update='curl -o- -L https://yarnpkg.com/install.sh | bash'
 alias yarn-clean="rm -rf ~/.cache/yarn/*"
