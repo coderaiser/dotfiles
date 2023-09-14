@@ -7,8 +7,6 @@ if [ "$(uname)" != "Linux" ]; then
     nvm i 20
 fi
 
-npm set package-lock false
-
 git config --global core.whitespace -trailing-space
 
 export EDITOR="vim"
@@ -169,4 +167,4 @@ alias longrun="~/longrun/bin/longrun.js"
 
 include ~/.bash_profile.local
 
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
